@@ -203,6 +203,17 @@ RegisterCommand(Config.doCommand, function(playerId, args, rawCommand)
 	end
 end, false)
 
+RegisterCommand("dado", function(playerId, args, rawCommand)
+	if playerId == 0 then
+		print(_U('no') )
+	else
+		args = table.concat(args, ' ')
+		local playerName = GetRealPlayerName(playerId)
+
+		TriggerClientEvent('esx_rpchat:sendProximityMessage', -1, playerId, math.random(1, 10).. playerId, args, {83, 170, 230})
+	end
+end, false)
+
 function GetRealPlayerName(playerId)
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 
