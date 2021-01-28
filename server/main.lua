@@ -210,7 +210,7 @@ RegisterCommand("dado", function(playerId, args, rawCommand)
 		args = table.concat(args, ' ')
 		local playerName = GetRealPlayerName(playerId)
 
-		TriggerClientEvent('esx_rpchat:sendProximityMessage', -1, playerId, math.random(1, 10).. playerId, args, {83, 170, 230})
+		TriggerClientEvent('esx_rpchat:sendProximityMessage', -1, playerId, math.random(1, 10).. " | " .. playerId, args, {83, 170, 230})
 	end
 end, false)
 
